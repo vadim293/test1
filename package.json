@@ -3,14 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "server": "npx json-server --watch db.json --port 3000",
-    "preview": "npm run build && npx serve -s dist -p 8080",
-    "ssh_front": "ssh -R 80:localhost:8080 localhost.run",
-    "ssh_server": "ssh -R 80:localhost:3000 localhost.run"
-  },
+  "serve": "vue-cli-service serve",
+  "build": "vue-cli-service build",
+  "lint": "vue-cli-service lint",
+  "server": "npx json-server --watch db.json --port 3000",
+  "preview": "npm run build && npx serve -s dist -p $PORT",
+  "start": "vue-cli-service serve --port $PORT --host 0.0.0.0",
+  "ssh_front": "ssh -R 80:localhost:8080 localhost.run",
+  "ssh_server": "ssh -R 80:localhost:3000 localhost.run"
+  } 
   "dependencies": {
     "autoprefixer": "^10.4.20",
     "axios": "^1.9.0",
